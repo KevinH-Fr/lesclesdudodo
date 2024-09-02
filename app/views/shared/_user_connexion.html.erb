@@ -1,0 +1,6 @@
+
+<% if current_user %>
+  <%= button_to 'Logout', 'auth/logout', method: :get, data: { turbo: false } %>
+<% else %>
+  <%= button_to 'Login', '/auth/auth0', method: :post, data: { turbo: false } %>
+<% end %>

@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container-fluid">
+    <%= link_to image_tag("main_logo.png", alt: "brand_logo", class: "img-fluid", width: 180), root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler old-school-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse w-100" id="navbarNav">
+      <div class="navbar-nav w-100 d-lg-flex">
+        <div class="d-lg-flex align-items-center">
+          <%= link_to 'Home', root_path, class: 'nav-link text-dark me-lg-2 mb-2 mb-lg-0 fw-bold' %>
+          <%= link_to 'Admin', admin_home_path, class: 'nav-link text-dark me-lg-2 mb-2 mb-lg-0 fw-bold' %>
+        </div>
+        <div class="ms-lg-auto">
+          <%= render 'shared/user_connexion' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
