@@ -1,0 +1,21 @@
+<div class="card">
+
+    <div class="card-header d-flex justify-content-between align-items-center fw-bold">
+        Mes enfants
+        <%= link_to  "ajouter un enfant", new_enfant_path, class: "btn btn-primary w-25" %>
+    </div>
+
+    <div class="card-body ">
+        <% @enfants.each do |enfant| %>
+
+            <%= enfant.prenom %>
+            <%= link_to  "show", enfant_path(enfant), class: "btn btn-sm btn-outline-primary" %>
+
+            <hr>
+
+            <%= render partial: "suivis/links_suivi", locals: {enfant: enfant} %>
+
+        <% end %>
+    </div>
+    
+</div>

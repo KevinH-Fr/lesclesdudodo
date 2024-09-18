@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_18_104053) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_18_203850) do
   create_table "enfants", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "prenom"
@@ -18,6 +18,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_18_104053) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_enfants_on_user_id"
+  end
+
+  create_table "produits", force: :cascade do |t|
+    t.text "description"
+    t.integer "prix"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "nom"
   end
 
   create_table "suivis", force: :cascade do |t|
@@ -37,6 +45,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_18_104053) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "auth0_sub"
+    t.boolean "admin"
   end
 
   add_foreign_key "enfants", "users"

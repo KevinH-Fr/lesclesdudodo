@@ -1,2 +1,24 @@
 <h1>Admin#home</h1>
-<p>Find me in app/views/admin/home.html.erb</p>
+
+<div class="card mb-3">
+    <div class="card-header">
+        Statistiques
+    </div>
+    <div class="card-body">
+        nb users: <%= @users.count %> <br>
+        nb admins: <%= @admins.count %>  <br>
+        nb enfants: <%= @enfants.count %>  <br>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        Produits
+        <%= link_to  "nouveau", new_produit_path, class: "btn btn-primary" %>
+    </div>
+    <div class="card-body">
+        nb produits: <%= @produits.count  %> <br>
+        total ventes: <%=  %>  <br>
+
+    </div>
+</div>

@@ -16,27 +16,6 @@
 
     <%= link_to  "show", enfant %> <hr>
 
-
-    <%# adapter pour prendre date de creation enfant et differencier quand suivi existe deja ou non %>    
-
-    <div class="d-flex">
-      <% 7.times do |i| %>
-        <% day_date = Date.today.next_day(i) %>
-
-        <% existing_suivi = Suivi.find_by(enfant: enfant, jour_suivi: day_date) %>
-
-        <% if existing_suivi %>
-          <%= link_to "#{day_date.strftime('%A')} - #{day_date} (suivi existant)", suivi_path(existing_suivi), class: "btn btn-sm btn-success m-1" %>
-        <% else %>
-          <%= link_to "#{day_date.strftime('%A')} - #{day_date} (nouveau suivi)", new_suivi_path(enfant: enfant, jour_suivi: day_date), class: "btn btn-sm btn-outline-success m-1" %>
-        <% end %>
-
-        <br>
-      <% end %>
-
-    </div>
-
-
   </div>
 
 </div>

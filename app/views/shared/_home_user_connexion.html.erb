@@ -1,0 +1,10 @@
+    <%= button_to "/auth/auth0", method: :post, data: { turbo: false }, class:"my-1" do %>
+            <i class="fa fa-user me-1"></i>
+            <span class="fw-bold">Se connecter</span> 
+    <% end %>
+
+    <%= button_to "/auth/auth0?screen_hint=signup&ref=#{params["ref"]}", 
+        method: :post, data: { turbo: false }, class:"my-1" do %>
+            <i class="fa fa-user-plus me-1"></i>
+            <span class="fw-bold">Créer un compte</span> 
+    <% end %>

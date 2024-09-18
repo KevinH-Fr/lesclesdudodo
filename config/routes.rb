@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :produits
   resources :suivis
   resources :enfants
   resources :users

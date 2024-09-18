@@ -3,16 +3,10 @@
 <% if @user %>
     Connecté en tant que <%= @user.prenom %> <%= @user.nom %> <br> <br>
 
-    <div class="card p-4">
-        <p> Mes enfants</p>
+    <%= render 'dashboard/dashboard_parent' %>
 
-        <% @enfants.each do |enfant| %>
-            <%= render enfant %>
-        <% end %>
-        
-    
-        <%= link_to  "ajouter un enfant", new_enfant_path, class: "btn btn-primary w-25" %>
-    </div>
+<% else %>
 
+    <%= render 'shared/home_user_connexion' %>
 
 <% end %>
