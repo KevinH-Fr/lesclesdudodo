@@ -1,0 +1,36 @@
+<%= form_with(model: suivi) do |form| %>
+  <% if suivi.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(suivi.errors.count, "error") %> prohibited this suivi from being saved:</h2>
+
+      <ul>
+        <% suivi.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :enfant_id, value: params[:enfant] %>
+
+  <div>
+    <%= form.label :jour_suivi, style: "display: block" %>
+    <%= form.date_field :jour_suivi, value: params[:jour_suivi] %>
+
+  </div>
+
+
+  <div>
+    <%= form.label :temps_endormissement, style: "display: block" %>
+    <%= form.number_field :temps_endormissement %>
+  </div>
+
+  <div>
+    <%= form.label :heure_endormissement, style: "display: block" %>
+    <%= form.datetime_field :heure_endormissement %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

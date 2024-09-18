@@ -4,6 +4,8 @@ class Auth0Controller < ApplicationController
       auth_info = request.env['omniauth.auth']
       session[:userinfo] = auth_info['extra']['raw_info']
   
+      auth0_sub = auth_info['extra']['raw_info']['sub']
+
       @user = User.find_or_create_by(auth0_sub: auth0_sub) 
       session[:user_id] = @user 
 

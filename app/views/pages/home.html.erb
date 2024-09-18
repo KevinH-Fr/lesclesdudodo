@@ -1,2 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Home</h1>
+
+<% if @user %>
+    Connecté en tant que <%= @user.prenom %> <%= @user.nom %> <br> <br>
+
+    <div class="card p-4">
+        <p> Mes enfants</p>
+
+        <% @enfants.each do |enfant| %>
+            <%= render enfant %>
+        <% end %>
+        
+    
+        <%= link_to  "ajouter un enfant", new_enfant_path, class: "btn btn-primary w-25" %>
+    </div>
+
+
+<% end %>

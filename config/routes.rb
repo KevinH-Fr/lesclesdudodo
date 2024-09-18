@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :suivis
+  resources :enfants
   resources :users
   get 'admin/home'
   get 'pages/home'

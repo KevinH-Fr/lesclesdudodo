@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  enfant: one
+  temps_endormissement: 1
+  heure_endormissement: 1
+
+two:
+  enfant: two
+  temps_endormissement: 1
+  heure_endormissement: 1

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @suivi %>
+
+<div>
+  <%= link_to "Edit this suivi", edit_suivi_path(@suivi) %> |
+  <%= link_to "Back to suivis", suivis_path %>
+
+  <%= button_to "Destroy this suivi", @suivi, method: :delete %>
+</div>
